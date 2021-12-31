@@ -1,0 +1,16 @@
+.list {
+    float: left;
+    width: 65%;
+    height: 100%;
+    padding-left: 35%;
+    overflow: auto;
+}
+
+.list .item {
+    float: left;
+    border: 1px solid #8967c0;
+    background-color: #6bf0de;
+    border-radius: 5px;
+    width: 50%;
+    margin-top: 10px;
+}
