@@ -7,13 +7,14 @@ import { List } from '../../components/List/List';
 import Button from '../../components/Button/Button';
 import api from '../../_config/api';
 import { FaSearch } from 'react-icons/fa';
+const title = process.env.REACT_APP_TITLE
 
-class Livros extends Component {
+export class Livros extends Component {
     constructor(props) {
         super(props);
         this.state = {
             value1: "",
-            result: api.get('/books?name=').data,
+            result: this.result,
         }
         this.fetchData = this.fetchData.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,6 +24,7 @@ class Livros extends Component {
     async fetchData(value) {
         const response = await api.get('/books?name=' + value)
         this.setState({ result: response?.data })
+        console.log(typeof (response))
     }
 
     handleSubmit(event) {
@@ -40,30 +42,24 @@ class Livros extends Component {
 
     render() {
 
-        const { title } = this.props;
-
-        const { sectionData } = this.state;
-
-        const sectionClassSearch = 'SectionSearch';
-
-        const sectionClassData = 'SectionData';
+        const { result } = this.state;
 
         const inputLabel = '';
 
         return (
-            <div className="Welcome">
+            <div className="Livros">
                 <Header title={title}></Header>
-                <Section className={sectionClassSearch}>
+                <Section className="search">
                     <form onSubmit={this.handleSubmit}>
                         <Input label={inputLabel} onChange={this.onChange1} />
                         <Button valor={<FaSearch />} tipo={"submit"} />
                     </form>
                 </Section>
-                <Section className={sectionClassData}> <List data={this.state.result} /> </Section>
+                <Section>
+                    <List data={result} />
+                </Section>
             </div>
         );
 
     }
 }
-
-export default Livros;

@@ -1,5 +1,5 @@
 import './App.css';
-import Livros from './features/Livros/Livros'
+import { Livros } from './features/Livros/Livros'
 
 function App() {
   return (
