@@ -4,7 +4,7 @@ import { Header } from '../../containers/Header/Header';
 import { Section } from '../../containers/Section/Section';
 import { Input } from '../../components/Input/Input';
 import { List } from '../../components/List/List';
-import Button from '../../components/Button/Button';
+import { Button } from '../../components/Button/Button';
 import api from '../../_config/api';
 import { FaSearch } from 'react-icons/fa';
 const title = process.env.REACT_APP_TITLE

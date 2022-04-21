@@ -1,12 +1,13 @@
 import './App.css';
+import React, { Component } from 'react';
 import { Livros } from './features/Livros/Livros'
 
-function App() {
-  return (
-    <div className="App">
-      <Livros />
-    </div>
-  );
+export class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <Livros />
+      </div>
+    );
+  }
 }
-
-export default App;
